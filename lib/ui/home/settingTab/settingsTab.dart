@@ -12,8 +12,6 @@ class SettingsTab extends StatefulWidget {
 
 class _SettingsTabState extends State<SettingsTab> {
 
-  List<String> languages = ["Light", "Dark"];
-  String? selectedItem = 'Light';
   @override
   Widget build(BuildContext context) {
     var settingProvider = Provider.of<SettingsProvider>(context);
@@ -21,41 +19,41 @@ class _SettingsTabState extends State<SettingsTab> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 18, top: 20),
-            child: Text("Language",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold , color: settingProvider.currentTheme==ThemeMode.light?Theme.of(context).primaryColor:Colors.white)),
-          ),
-          InkWell(
-            onTap: () {
-              showLanguageSelectorBottomsheet();
-            },
-            child: Padding(
-              padding: const EdgeInsets.only(left: 18, right: 18, top: 18),
-              child: Container(
-                decoration: BoxDecoration(
-                    color:  settingProvider.currentTheme==ThemeMode.light?Colors.white:Color.fromRGBO(20, 25, 34, 1),
-                    border: Border.all(
-                        color: Theme.of(context).primaryColor, width: 2)),
-                child: Padding(
-                  padding: const EdgeInsets.all(18.0),
-                  child: Row(
-                    children: [
-                      Text(
-                        "English",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Theme.of(context).primaryColor),
-                      ),
-                      Spacer(),
-                      Icon(Icons.arrow_drop_down)
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.only(left: 18, top: 20),
+          //   child: Text("Language",
+          //       style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold , color: settingProvider.currentTheme==ThemeMode.light?Theme.of(context).primaryColor:Colors.white)),
+          // ),
+          // InkWell(
+          //   onTap: () {
+          //     showLanguageSelectorBottomsheet();
+          //   },
+          //   child: Padding(
+          //     padding: const EdgeInsets.only(left: 18, right: 18, top: 18),
+          //     child: Container(
+          //       decoration: BoxDecoration(
+          //           color:  settingProvider.currentTheme==ThemeMode.light?Colors.white:Color.fromRGBO(20, 25, 34, 1),
+          //           border: Border.all(
+          //               color: Theme.of(context).primaryColor, width: 2)),
+          //       child: Padding(
+          //         padding: const EdgeInsets.all(18.0),
+          //         child: Row(
+          //           children: [
+          //             Text(
+          //               "English",
+          //               style: TextStyle(
+          //                   fontSize: 14,
+          //                   fontWeight: FontWeight.bold,
+          //                   color: Theme.of(context).primaryColor),
+          //             ),
+          //             Spacer(),
+          //             Icon(Icons.arrow_drop_down)
+          //           ],
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
           Padding(
             padding: const EdgeInsets.only(left: 18, top: 20),
             child: Text("Mode",
